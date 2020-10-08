@@ -23,5 +23,8 @@
         "@models/*": ["./src/models/*"],
         "@routers/*": ["./src/routers/*"]
     }
-  }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
