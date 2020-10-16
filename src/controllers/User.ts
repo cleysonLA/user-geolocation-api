@@ -5,6 +5,16 @@ import User from '../models/User';
 export default class UserController {
   async index(request: Request, response: Response) {
     try {
+      const users = await User.find({});
+
+      return response.send({ users });
+    } catch {
+      return response.status(400).send({ error: 'Get all users failed' });
+    }
+  }
+
+  async show(request: Request, response: Response) {
+    try {
       const { id: _id } = request.params;
 
       const user = await User.findById(_id);
